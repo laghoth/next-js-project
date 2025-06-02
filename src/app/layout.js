@@ -1,16 +1,9 @@
 import Navbar from "@/components/navbar/Navbar";
 import "./globals.css";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, Roboto, Poppins } from "next/font/google";
 import Footer from "@/components/footer/Footer";
 
-const geist = Geist({
-  subsets: ["latin"],
-  display: "swap",
-});
-const geistMono = Geist_Mono({
-  subsets: ["latin"],
-  display: "swap",
-});
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Create Next App ", // title of the app
@@ -18,12 +11,13 @@ export const metadata = {
   keywords: "nextjs, react, app", // keywords for SEO
   authors: [{ name: "Your Name", url: "https://yourwebsite.com" }], // author information
   creator: "Your Name", // creator of the app
+  lang: "en", // language of the app
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${geist.className} ${geistMono.className}`}>
+      <body className={inter.className}>
         <div className="container">
           <Navbar />
           {children}
